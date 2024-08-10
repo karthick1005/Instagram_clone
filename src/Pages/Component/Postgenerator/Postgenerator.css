@@ -1,0 +1,175 @@
+/* post */
+.Post_container {
+    height: 100%;
+    /* border: 2px solid white; */
+    margin: 10px 55px;
+}
+
+.Post_card {
+    /* border: 2px solid white; */
+    margin: 0px 80px;
+    height: auto;
+}
+
+.post_prof_pic {
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+}
+
+.Post_card_title {
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid white; */
+    /* justify-content: ; */
+    align-items: center;
+}
+
+.Post_card_title a {
+    cursor: pointer;
+}
+
+.post_card_name {
+    margin-left: 10px;
+    padding-right: 75%;
+}
+
+
+
+.slideshowDots {
+    position: absolute;
+    margin: 10px 50%;
+    bottom: 0;
+    /* align-items: center; */
+    /* text-align: center; */
+    display: inline-flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.slideshowDot {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    /* margin: 15px 7px 0px; */
+    background-color: #666666;
+    /* position: relative; */
+}
+
+.slideshowDot.active {
+    background-color: white;
+}
+
+
+.beforebutton,
+.nextbutton {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    background-color: #B4B4B4;
+    cursor: pointer;
+    border-radius: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.button_post {
+    width: 100%;
+    position: absolute;
+    display: inline-flex;
+    flex-direction: row;
+    top: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.myslide-hidden {
+    display: none;
+}
+
+/* //bottom */
+.like_btn button {
+    margin-top: 5px;
+    background-color: transparent;
+}
+
+.like_section {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    right: 0;
+    position: relative;
+}
+
+.bookmark {
+    right: 0;
+    position: absolute;
+}
+
+.like_section_number p {
+    padding-left: 5px;
+}
+
+.view_comments_btn {
+    color: #A8A8A8;
+    cursor: pointer;
+}
+
+.add_comments_cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.add_comments_text {
+    color: white;
+    background-color: transparent;
+    border: 0;
+    width: 85%;
+    height: auto;
+    outline: 0;
+    border-style: none;
+    border-color: Transparent;
+    overflow: auto;
+    max-height: 80px;
+    border-bottom-style: none;
+    resize: none;
+    scrollbar-width: none;
+}
+
+.add_comments_btn {
+    color: #008CE7;
+    cursor: pointer;
+}
+
+.Post_card hr {
+    border-color: #a8a8a834;
+}
+
+.post_image_holder {
+    height: 500px;
+}
+
+
+@media only screen and (max-width: 770px) {
+
+    .add_comments_cont {
+        display: none;
+    }
+
+    .Post_container,
+    .Post_card {
+        margin: 0;
+    }
+
+    .post_card_name {
+        padding-right: 65%;
+    }
+
+
+}

@@ -1,0 +1,40 @@
+.Homepage_Container {
+    position: relative;
+    color: white;
+    margin-left: 15vw;
+    /* margin-left: 30%; */
+    /* border: 2px solid white; */
+    width: 60vw;
+    height: 100%;
+    /* margin-top: 30px; */
+
+}
+
+.story_homepage {
+    /* border: 2px solid white; */
+    margin-left: 120px;
+    overflow: auto;
+    scrollbar-width: none;
+    width: 72%;
+}
+
+@media only screen and (max-width: 1244px) {
+    .Homepage_Container {
+        margin-left: 10vw;
+        width: 80vw;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .Homepage_Container {
+        margin-left: 0vw;
+        width: 95vw;
+        height: 100vh;
+    }
+
+    .story_homepage {
+        /* border: 2px solid white; */
+        margin-left: 0px;
+        width: 100%;
+    }
+}

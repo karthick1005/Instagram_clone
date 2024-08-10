@@ -1,0 +1,82 @@
+.Menu_Card {
+    position: fixed;
+    right: 0;
+    margin-left: 60vw;
+    color: white;
+    /* border: 2px solid white; */
+    width: 30vw;
+}
+
+.prof_pic,
+
+.prof_pic_suggest {
+    padding: 10px 10px;
+    /* border: 2px solid white; */
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    /* gap: 10px; */
+    align-items: center;
+}
+
+.prof_pic_others {
+    padding: 10px 10px;
+    /* border: 2px solid white; */
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* gap: 20px; */
+    align-items: center;
+}
+
+.prof_pic_others button {
+    padding-left: 28%;
+}
+
+.prof_pic button,
+.prof_pic_others button {
+    background-color: transparent;
+    color: #4299E1;
+    border: none;
+    cursor: pointer;
+}
+
+.prof_pic img {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+}
+
+.prof_pic_suggest button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.prof_pic_others img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    padding-right: 20px;
+}
+
+.prof_other-cont {
+    display: inline-block;
+    width: 100%;
+}
+
+.suggest {
+    font-size: 10px;
+}
+
+.credit_menu {
+    padding-left: 20px;
+}
+
+@media only screen and (max-width: 1387px) {
+    .Menu_Card {
+        display: none;
+    }
+}

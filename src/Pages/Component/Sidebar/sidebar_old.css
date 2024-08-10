@@ -1,0 +1,111 @@
+.sidebar_container {
+    width: 230px;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    border-right: 1px solid grey;
+    position: fixed;
+    height: 100%;
+    overflow: visible;
+}
+
+.instatext {
+    margin: 25px 0px 40px 10px;
+
+    /* padding: 50px; */
+}
+
+.instalogo {
+    display: none;
+}
+
+.sidebar_container ul {
+    list-style-type: none;
+    color: white;
+    padding: 0;
+}
+
+.sidebar_container li a {
+
+    display: block;
+    color: white;
+    width: 150px;
+    height: 40px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 50px;
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    /* justify-content: center; */
+}
+
+.lielement {
+    padding-left: 10px;
+}
+
+li a:hover {
+    background-color: #555;
+    color: white;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    /* width: 90px; */
+    background-color: rgb(92, 91, 91);
+    color: #fff;
+    text-align: center;
+
+    max-width: fit-content;
+    border-radius: 6px;
+    padding: 5px 10px;
+    margin-left: 46px;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+
+.profilepic_cont img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+
+@media only screen and (max-width: 770px) {
+    .sidebar_container {
+        width: 60px;
+
+    }
+
+    .lielement {
+        display: none;
+    }
+
+    .instatext {
+        display: none;
+    }
+
+    .instalogo {
+        display: block;
+        margin: 25px 0px 40px 10px;
+    }
+
+
+
+    .sidebar_container li a {
+        width: fit-content;
+        padding-right: 10px;
+    }
+
+
+
+    .sidebar_container li a:hover .tooltiptext {
+        visibility: visible;
+    }
+}

@@ -1,0 +1,118 @@
+.Story_container {
+    /* border: 2px solid white; */
+    top: 0;
+    position: relative;
+    height: 15vh;
+    padding-top: 10px;
+    margin: 7px 0;
+    /* overflow: auto;
+    scrollbar-width: none; */
+    background-color: black;
+    /* margin-left: 120px; */
+    /* width: 72%; */
+}
+
+.Story_container ul,
+.Hightlight_Container ul {
+    /* border: 2px solid white; */
+    list-style: none;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 4%;
+}
+
+.Story_container ul li a {
+    width: 50px;
+    height: 50px;
+    /* width: 120px;
+    height: 120px; */
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Story_prof {
+
+    height: 75px;
+    width: 75px;
+    border-radius: 100%;
+}
+
+.Hightlight_Container {
+    /* border: 2px solid white; */
+    top: 0;
+    position: relative;
+    height: 15vh;
+    margin: 7px 0;
+    /* overflow: auto;
+       scrollbar-width: none; */
+    background-color: black;
+    /* margin-left: 120px; */
+    /* width: 72%; */
+}
+
+.Hightlight_Container ul li a {
+
+    /* width: 120px;
+    height: 120px; */
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Hightlight_prof {
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+}
+
+@media only screen and (max-width: 758px) {
+
+
+    .Story_container ul {
+        margin-left: -20px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .Hightlight_Container {
+        /* border: 2px solid white; */
+        top: 0;
+        position: relative;
+        height: 15vh;
+        padding-top: 10px;
+        margin: 7px 0;
+        /* overflow: auto;
+        scrollbar-width: none; */
+        background-color: black;
+        /* margin-left: 120px; */
+        /* width: 72%; */
+    }
+
+    .Hightlight_Container ul li a {
+        width: 50px;
+        height: 50px;
+        /* width: 120px;
+        height: 120px; */
+        color: white;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Hightlight_prof {
+
+        height: 75px;
+        width: 75px;
+        border-radius: 100%;
+    }
+}
