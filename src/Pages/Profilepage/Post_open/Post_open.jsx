@@ -5,13 +5,17 @@ import { IoEllipsisHorizontal } from "react-icons/io5";
 import { CommentLogo, UnlikeLogo } from "../../../assets/constants";
 import { FaRegBookmark, FaRegHeart } from "react-icons/fa6";
 import Comment from "../../Component/comment/Comment";
-import { getimagedata, updatesaved } from "../../../Hooks/Usesignupandpass";
+import {
+  getdatawithuid,
+  getimagedata,
+  updatesaved,
+} from "../../../Hooks/Usesignupandpass";
 import { Updatelikes } from "../../../Hooks/updatelike";
 import { useNavigate, useParams } from "react-router-dom";
 import { addnewcomment, getcommentswithid } from "../../../Hooks/comments";
 import { FaBookmark } from "react-icons/fa6";
 import { removeposttodb } from "../../../Hooks/Post";
-const Post_open = ({ val }) => {
+const Post_open = ({ val, image }) => {
   const [like, setlike] = useState(false);
   const textarea_ref = useRef(null);
   const navigate = useNavigate();
@@ -24,6 +28,7 @@ const Post_open = ({ val }) => {
   if (val !== null && value == null) {
     value = val;
   }
+  const [img, setimg] = useState(image);
   const [data, setdata] = useState(null);
   const [comments, setcomments] = useState(null);
   useEffect(() => {
@@ -34,6 +39,12 @@ const Post_open = ({ val }) => {
     let datas = await getimagedata(value);
     console.log(datas);
     setdata(datas);
+    getuser(datas.userid);
+  };
+  const getuser = async (uid) => {
+    let data = await getdatawithuid(uid);
+    console.log(data);
+    setimg(data.profilepicurl);
   };
   const getcomments = async () => {
     let datas = await getcommentswithid(value);
@@ -78,7 +89,8 @@ const Post_open = ({ val }) => {
       value,
       JSON.parse(localStorage.getItem("user-Info")).uid,
       textarea_ref.current.value,
-      JSON.parse(localStorage.getItem("user-Info")).username
+      JSON.parse(localStorage.getItem("user-Info")).username,
+      JSON.parse(localStorage.getItem("user-Info")).profilepicurl
     );
     if (res) {
       textarea_ref.current.value = "";
@@ -127,28 +139,64 @@ const Post_open = ({ val }) => {
       window.location.reload();
     }
   };
+  const getdate = (time) => {
+    let postDate = new Date(time.seconds * 1000);
+    let currentDate = new Date();
+    let differenceInTime = currentDate - postDate;
+    let secondsAgo = Math.floor(differenceInTime / 1000);
+    let minutesAgo = Math.floor(secondsAgo / 60);
+    let hoursAgo = Math.floor(minutesAgo / 60);
+    let daysAgo = Math.floor(hoursAgo / 24);
+    let weeksAgo = Math.floor(daysAgo / 7);
+    if (secondsAgo < 60) {
+      return "Just now";
+    } else if (minutesAgo < 60) {
+      return `${minutesAgo} minute${minutesAgo !== 1 ? "s" : ""} ago`;
+    } else if (hoursAgo < 24) {
+      return `${hoursAgo} hour${hoursAgo !== 1 ? "s" : ""} ago`;
+    } else if (daysAgo < 7) {
+      return `${daysAgo} day${daysAgo !== 1 ? "s" : ""} ago`;
+    } else if (weeksAgo < 4) {
+      return `${weeksAgo} week${weeksAgo !== 1 ? "s" : ""} ago`;
+    } else {
+      // If it's more than 4 weeks, return the full date in a readable format
+      return postDate.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+    }
+    // return 10;
+  };
   return (
     <div className="Post_open_container" onClick={update}>
       <div className="Post_open_body">
         <div className="post_comment_topcont_mobile">
-          <img src="/profilepic.png" alt="" />
+          <img src={img} alt="" />
           <div className="post_comment_topcnt_mobile_text">
             <span>{data && data.username}</span>
             <span>{data && data.caption}</span>
           </div>
-          <a onClick={deletepost}>Delete</a>
+          {data &&
+          data.userid === JSON.parse(localStorage.getItem("user-Info")).uid ? (
+            <a onClick={deletepost}>Delete</a>
+          ) : null}
         </div>
         <div className="post_open_post">
           <Post photos={data ? data.img : null} />
         </div>
         <div className="Post_open_comments_cont">
           <div className="post_comment_topcont">
-            <img src="/profilepic.png" alt="" />
+            <img src={img} alt="" />
             <div className="post_comment_topcnt_text">
               <span>{data && data.username}</span>
               <span>{data && data.caption}</span>
             </div>
-            <a onClick={deletepost}>Delete</a>
+            {data &&
+            data.userid ===
+              JSON.parse(localStorage.getItem("user-Info")).uid ? (
+              <a onClick={deletepost}>Delete</a>
+            ) : null}
           </div>
           <div className="Entire_post_comment_comment_cont">
             {comments &&
@@ -195,7 +243,9 @@ const Post_open = ({ val }) => {
             </a>
           </div>
           <div className="Like_section_count">
-            {data ? data.likes.length : 1} likes<span>may 10</span>
+            {data ? data.likes.length : 1} likes
+            {console.log(data)}
+            <span>{data ? getdate(data.time) : 1}</span>
           </div>
           <div className="post_add_comments_container">
             <div className="post_add_comments_cont">

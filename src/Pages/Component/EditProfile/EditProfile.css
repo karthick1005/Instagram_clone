@@ -30,7 +30,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid wheat;
+    /* border: 2px solid wheat; */
     height: 100%;
 }
 

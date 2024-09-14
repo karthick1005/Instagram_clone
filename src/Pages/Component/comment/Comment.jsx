@@ -38,7 +38,7 @@ const Comment = ({ value, commentid, postid }) => {
   return (
     <div>
       <div className="post_comment_comment_cont">
-        <img src="/profilepic.png" alt="" />
+        <img src={value.pic} alt="" />
         <div className="post_comment_topcnt_text">
           <span>{value.username}</span>
           <span>{value.comment}</span>

@@ -35,7 +35,7 @@ const Story = ({ type }) => {
                     classname={
                       type === "Hightlight" ? "Hightlight_prof" : "Story_prof"
                     }
-                    url="/profilepic.png"
+                    url={`https://loremflickr.com/500/500/${index}`}
                     altername=""
                   />
                   {value}

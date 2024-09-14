@@ -1,6 +1,7 @@
 .Menu_Card {
     position: fixed;
     right: 0;
+    top: 0;
     margin-left: 60vw;
     color: white;
     /* border: 2px solid white; */
@@ -75,8 +76,38 @@
     padding-left: 20px;
 }
 
+.prof_pic_others_img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 3;
+}
+
 @media only screen and (max-width: 1387px) {
     .Menu_Card {
-        display: none;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+        /* display: none; */
+    }
+
+    .prof_other-cont {
+        width: 60%;
+    }
+
+    .prof_pic_others {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 771px) {
+    .Menu_Card {
+        padding-bottom: 70px;
+        /* display: none; */
     }
 }

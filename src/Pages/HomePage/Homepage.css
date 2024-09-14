@@ -18,6 +18,13 @@
     width: 72%;
 }
 
+.Nofollowerspopup {
+    display: flex;
+    color: rgb(255, 143, 143);
+    justify-content: center;
+
+}
+
 @media only screen and (max-width: 1244px) {
     .Homepage_Container {
         margin-left: 10vw;

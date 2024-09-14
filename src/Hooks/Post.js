@@ -1,4 +1,4 @@
-import { addDoc, arrayRemove, arrayUnion, collection, deleteDoc, doc, setDoc, updateDoc } from "firebase/firestore";
+import { addDoc, arrayRemove, arrayUnion, collection, deleteDoc, doc, setDoc, Timestamp, updateDoc } from "firebase/firestore";
 import { firestore, storage } from "../Firebase/Firebase";
 import { deleteObject, ref } from "firebase/storage";
 
@@ -8,7 +8,9 @@ const uploadposttodb = async (userid, img, caption, username) => {
             caption: caption,
             img: [img],
             likes: [],
-            username: username
+            username: username,
+            userid: userid,
+            time: Timestamp.now()
         }
         console.log(newpost);
 

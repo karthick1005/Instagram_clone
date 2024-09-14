@@ -5,6 +5,7 @@ import { auth, firestore } from '../Firebase/Firebase';
 import { showerror, showsuccessalert } from '../Pages/Component/Toast/toast';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword } from "firebase/auth";
+import { uploadphotos } from './Photos';
 const useSignInWithEmailAndPass = () => {
     const navigate = useNavigate();
     const [
@@ -220,9 +221,16 @@ const updatesaved = async (id, bool, postid) => {
         return false
     }
 }
-const updateprofile = async (userid, bios, usernames) => {
+const updateprofile = async (userid, bios, usernames, pic, file) => {
     try {
-        await updateDoc(doc(firestore, "users", userid), { bio: bios, username: usernames })
+        let res
+        if (pic) {
+            res = await uploadphotos(userid, file)
+        }
+        else {
+            res = JSON.parse(localStorage.getItem("user-info")).profilepicurl
+        }
+        await updateDoc(doc(firestore, "users", userid), { bio: bios, username: usernames, profilepicurl: res })
         return true;
     } catch (error) {
         console.log(error);

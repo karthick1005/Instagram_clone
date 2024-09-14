@@ -28,7 +28,7 @@ const Sidebar = () => {
   const onclose = () => {
     setupload([]);
     closeModal();
-    window.location.reload();
+    // window.location.reload();
   };
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);

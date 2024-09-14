@@ -24,7 +24,9 @@ const EditProfile = ({ close }) => {
     let res = await updateprofile(
       JSON.parse(localStorage.getItem("user-Info")).uid,
       word,
-      text_red.current.value
+      text_red.current.value,
+      pic,
+      file
     );
     if (res) {
       let obj = JSON.parse(localStorage.getItem("user-Info"));

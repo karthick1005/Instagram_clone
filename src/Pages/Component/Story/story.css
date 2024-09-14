@@ -19,7 +19,7 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    gap: 4%;
+    gap: 40px;
 }
 
 .Story_container ul li a {

@@ -33,7 +33,7 @@
 /* password place */
 .pass {
     width: 85%;
-    border: 1px solid rgba(128, 128, 128, 0.4);
+    /* border: 1px solid rgba(128, 128, 128, 0.4); */
     margin: 10px;
     display: flex;
     flex-direction: row;
@@ -52,6 +52,10 @@
 .toggle-icon {
     position: relative;
     left: 110px;
+    color: white;
+    background-color: black;
+    border: none;
+    /* background-color: transparent; */
     /* position: relative; */
 }
 
@@ -86,8 +90,17 @@
     margin: 10px;
 }
 
-.auth img {
-    height: 90px;
+.auth .logoimage {
+    width: 175px;
+    /* Width of each logo */
+    height: 51px;
+    background-image: url("KoLLpWDb4f6.png");
+    background-size: auto;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 20px 0px;
+    /* background-position: center; */
 }
 
 .googlelogin_btn {

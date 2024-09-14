@@ -6,7 +6,7 @@ import { Updatefollowers } from "../../../Hooks/updatelike";
 import { signOut } from "firebase/auth";
 import { auth } from "../../../Firebase/Firebase";
 import { useNavigate } from "react-router-dom";
-const Menucard = () => {
+const Menucard = ({ datachanged }) => {
   const values = ["hello", "hello2"];
   const [name, setname] = useState("");
   const [data, setdata] = useState(null);
@@ -56,6 +56,7 @@ const Menucard = () => {
       JSON.parse(localStorage.getItem("user-Info")).uid
     );
     localStorage.setItem("user-Info", JSON.stringify(data_res));
+    datachanged();
     getdatalocal();
   };
   const logout = async () => {
@@ -96,17 +97,19 @@ const Menucard = () => {
 
           return (
             <div className="prof_pic_others">
-              <Profile_pic
-                // classname="profilepic"
-                url={value.profilepicurl}
-                altername=""
-              />
-              {/* <img src="/profilepic.png" alt="" srcset="" /> */}
-              <p>
-                {value.username}
+              <div className="prof_pic_others_img">
+                <Profile_pic
+                  // classname="profilepic"
+                  url={value.profilepicurl}
+                  altername=""
+                />
+                {/* <img src="/profilepic.png" alt="" srcset="" /> */}
+                <p>
+                  {value.username}
 
-                <p className="suggest">Suggested for you</p>
-              </p>
+                  <p className="suggest">Suggested for you</p>
+                </p>
+              </div>
               <button onClick={() => follow(value.uid)}>Follow</button>
             </div>
           );

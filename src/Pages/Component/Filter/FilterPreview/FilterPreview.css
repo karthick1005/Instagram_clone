@@ -1,0 +1,49 @@
+.filterpreviewcont {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    /* Space between grid items */
+    padding: 10px;
+    /* border: 2px solid black; */
+    /* height: 100%; */
+    margin: 0px 15px;
+    margin-top: 5px;
+
+    height: 80%;
+    overflow: scroll;
+    overflow-x: hidden;
+    /* scrollbar-width: none; */
+}
+
+.Filterpreviewpic {
+    padding: 10px;
+    cursor: pointer;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    width: 88px;
+    height: auto;
+    align-items: center;
+}
+
+.Filterpreviewpic img {
+    width: 88px;
+    height: 88px;
+}
+
+.Filterpreviewpic.active {
+    color: rgb(0, 149, 246);
+}
+
+.Filterpreviewpic.active img {
+    /* padding: 10px; */
+    border: 2px solid rgb(0, 149, 246);
+    /* border-radius: 100%; */
+    /* color: white; */
+}
+
+@media only screen and (max-width:402px) {
+    .filterpreviewcont {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

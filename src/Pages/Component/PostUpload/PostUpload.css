@@ -1,5 +1,5 @@
 .PostUpload_parent {
-    position: absolute;
+    position: fixed;
     color: white;
     /* border: 2px solid white; */
     width: 96vw;
@@ -125,7 +125,7 @@
 }
 
 .Post_upload_details {
-    width: 300px;
+    width: 450px;
 }
 
 .Postupload_body_below {
@@ -177,4 +177,35 @@
     right: 0;
     bottom: 0;
     margin-right: 10px;
+}
+
+.PostUpload_selection_btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.PostUpload_selection_btn button {
+    background: transparent;
+    border: none;
+    width: 40%;
+    font-size: medium;
+    cursor: pointer;
+    padding: 10px 0px;
+    color: rgba(224, 241, 255, 0.332);
+
+    /* display: flex; */
+    /* flex-direction: row; */
+
+}
+
+.PostUpload_selection_btn button.active {
+    color: rgb(224, 241, 255);
+
+    border-bottom: 2px solid white;
+}
+
+.Post_upload_details_area {
+    height: 500px;
+    width: 450px;
 }

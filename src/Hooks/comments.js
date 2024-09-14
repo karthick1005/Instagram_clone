@@ -24,13 +24,14 @@ const updatecomments = async (postid, commentid, userid, bool) => {
         return false
     }
 }
-const addnewcomment = async (postid, userid, comments, name) => {
+const addnewcomment = async (postid, userid, comments, name, url) => {
     try {
         const newcomment = {
             comment: comments,
             likes: [],
             userid: userid,
-            username: name
+            username: name,
+            pic: url
         }
         // firestore.collection("posts").doc(postid).collection("comments").add(newcomment).then(docRef => {
         //     console.log("Document written with ID: ", docRef.id);

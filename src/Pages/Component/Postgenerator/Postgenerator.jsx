@@ -75,7 +75,8 @@ const Postgenerator = ({ post, name, addfunc, image }) => {
       post,
       JSON.parse(localStorage.getItem("user-Info")).uid,
       textarea_ref.current.value,
-      JSON.parse(localStorage.getItem("user-Info")).username
+      JSON.parse(localStorage.getItem("user-Info")).username,
+      JSON.parse(localStorage.getItem("user-Info")).profilepicurl
     );
     if (res) {
       textarea_ref.current.value = "";
@@ -151,7 +152,7 @@ const Postgenerator = ({ post, name, addfunc, image }) => {
                 <FaRegHeart size={24} color="white" />
               )}
             </div>
-            <div onClick={() => addfunc(post)}>
+            <div onClick={() => addfunc(post, image)}>
               <CommentLogo />
             </div>
             <div>

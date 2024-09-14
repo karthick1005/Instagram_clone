@@ -50,7 +50,8 @@ const Authpage = () => {
       </div>
       <div className="auth_form">
         <div className="auth">
-          <img src="/logo.png" alt="" />
+          <div className="logoimage"></div>
+          {/* <img alt="" /> */}
           <input
             type="email"
             name=""

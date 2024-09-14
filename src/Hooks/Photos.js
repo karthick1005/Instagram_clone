@@ -7,8 +7,7 @@ function generateRandomFileName(extension) {
 }
 const uploadphotos = async (userid, file) => {
     try {
-        const extension = file.name.split('.').pop(); // Get file extension
-        const randomFileName = generateRandomFileName(extension);
+        const randomFileName = generateRandomFileName("png");
         await uploadBytes(ref(storage, userid + "/" + randomFileName), file);
         // console.log(res);
         let res = await getDownloadURL(ref(storage, userid + "/" + randomFileName));

@@ -114,16 +114,22 @@ const Profilepage = () => {
     seteditprof([]);
   };
   const unfollowuser = async () => {
-    let res = Updatefollowers(
+    let res = await Updatefollowers(
       JSON.parse(localStorage.getItem("user-Info")).uid,
       datas.uid,
       false
     );
+    console.log(res);
     const updatedFollowing = datas.follower.filter(
       (id) => id !== JSON.parse(localStorage.getItem("user-Info")).uid
     );
     const updatedUser = { ...datas, follower: updatedFollowing };
+    console.log(updatedUser);
+    // localStorage.setItem("user-Info", JSON.stringify(updatedUser));
     setdata(updatedUser);
+    let obj = JSON.parse(localStorage.getItem("user-Info"));
+    obj.following = obj.following.filter((id) => id !== datas.uid);
+    localStorage.setItem("user-Info", JSON.stringify(obj));
   };
   if (datas === null) return <div>404</div>;
   return (
@@ -188,9 +194,9 @@ const Profilepage = () => {
             </div>
           </section>
         </div>
-        <div className="Highlights_cont">
+        {/* <div className="Highlights_cont">
           <Story type={"Hightlight"} />
-        </div>
+        </div> */}
 
         <div className="Profile_bottom_container">
           <div className="Profile_bottom_btn">

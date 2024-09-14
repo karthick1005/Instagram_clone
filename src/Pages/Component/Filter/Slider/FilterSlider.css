@@ -1,0 +1,27 @@
+.Filterslider_cont {
+    /* border: 2px solid black; */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin: 0px 20px;
+    margin-top: 20px;
+}
+
+.Filterslideritem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: large;
+}
+
+.Filterslider {
+    width: 80%;
+}
+
+.Filterslideritem #sliderhead {
+    width: 40%;
+}
